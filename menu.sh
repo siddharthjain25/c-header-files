@@ -25,7 +25,7 @@ show_menu() {
 }
 
 # Main script
-while :
+while true
 do
     show_menu
     read -p "Enter your choice: " choice
